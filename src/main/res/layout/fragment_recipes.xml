@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.RecipesFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/activity_recipes__guidelineLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="22dp"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/activity_recipes__guidelineRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="22dp"
+            />
+
+        <TextView
+            android:id="@+id/activity_recipes__header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/activity_recipes__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/activity_recipes__guidelineRight"
+            android:textAlignment="center"
+            android:fontFamily="@font/rubik_medium"
+            android:textColor="#232323"
+            android:textSize="26sp"
+            android:textAllCaps="false"
+            android:text="Рецепты"
+            android:layout_marginTop="19dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

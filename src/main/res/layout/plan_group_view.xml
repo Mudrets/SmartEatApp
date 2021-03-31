@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/day_row__num_of_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_text"
+            android:layout_marginStart="20dp"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:fontFamily="@font/rubik_medium"
+            android:text="День 1"
+            />
+
+        <TextView
+            android:id="@+id/plan_group_view__count_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_text"
+            android:layout_marginStart="20dp"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:fontFamily="@font/rubik_medium"
+            android:text="3245 ККАЛ"
+            />
+
+    </RelativeLayout>
+
+</FrameLayout>

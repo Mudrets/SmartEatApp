@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/products"
+        android:title="Покупки"
+        android:icon="@drawable/ic_products"/>
+    <item
+        android:id="@+id/recipes"
+        android:title="Рецепты"
+        android:icon="@drawable/ic_recipes"/>
+    <item
+        android:id="@+id/plan"
+        android:title="План"
+        android:icon="@drawable/ic_plan"
+        android:checked="true"/>
+    <item
+        android:id="@+id/forms"
+        android:title="Анкеты"
+        android:icon="@drawable/ic_form"/>
+    <item
+        android:id="@+id/prof"
+        android:title="Профиль"
+        android:icon="@drawable/ic_lk"/>
+</menu>

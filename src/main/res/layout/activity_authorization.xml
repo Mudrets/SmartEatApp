@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.AuthorizationActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_authorization__guidelineLeft"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="22dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_authorization__guidelineRight"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="22dp"
+        />
+
+    <ImageView
+        style="@style/logoImage"
+        app:layout_constraintStart_toEndOf="@id/activity_authorization__guidelineLeft"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/activity_authorization__guidelineLeft"
+        app:layout_constraintEnd_toStartOf="@id/activity_authorization__guidelineRight"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:paddingTop="80dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:text="Войти"
+            android:textColor="#232323"
+            android:textSize="24sp"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/activity_authorization__email_field"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            style="@style/field"
+            android:hint="Email"
+            android:layout_marginBottom="16dp"
+            android:onClick="onClickField"/>
+
+        <EditText
+            android:id="@+id/activity_authorization__password_field"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            style="@style/field"
+            android:inputType="textPassword"
+            android:hint="Пароль"
+            android:paddingHorizontal="16dp"
+            android:onClick="onClickField" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="7dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/activity_authorization__password_warning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/errorMsg"
+                android:layout_weight="55"
+                android:text="Неверный логин и/или пароль"
+                android:layout_gravity="start"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/activity_authorization__forgot_password"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                style="@style/transparentButton"
+                android:text="Забыл пароль"
+                android:textSize="15sp"
+                android:layout_weight="45"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activity_authorization__enter_btn"
+            android:layout_width="250dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            style="@style/GreenButton"
+            android:text="Войти"
+            android:layout_marginTop="30dp"
+            android:onClick="onClickEnterButton"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_weight="35"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="ИЛИ"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:layout_gravity="center"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_weight="35"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activity_authorization__registration_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/transparentButton"
+            android:layout_gravity="center"
+            android:text="Регистрация"
+            android:onClick="onClickRegisterButton"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
