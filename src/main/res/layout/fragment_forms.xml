@@ -1,46 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.FormsFragment">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        tools:context=".ui.fragments.FormsFragment">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/activity_forms__guidelineLeft"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="22dp"
-            />
+            android:paddingBottom="100dp">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/activity_forms__guidelineRight"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="22dp"
-            />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/activity_forms__guidelineLeft"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="22dp" />
 
-        <TextView
-            android:id="@+id/activity_forms__header"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/activity_forms__guidelineLeft"
-            app:layout_constraintEnd_toStartOf="@id/activity_forms__guidelineRight"
-            android:textAlignment="center"
-            android:fontFamily="@font/rubik_medium"
-            android:textColor="#232323"
-            android:textSize="26sp"
-            android:textAllCaps="false"
-            android:text="Анкеты"
-            android:layout_marginTop="19dp"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/activity_forms__guidelineRight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="22dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/fragment_forms__header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:fontFamily="@font/rubik_medium"
+                android:text="@string/forms_header"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#232323"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toStartOf="@id/activity_forms__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/activity_forms__guidelineLeft"
+                app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_forms__forms_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/fragment_forms__header"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/fragment_forms__not_complete_forms_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_forms__forms_recycler"
+                android:text="@string/not_complete_forms"
+                android:fontFamily="@font/rubik_medium"
+                android:textColor="@color/black_text"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_forms__not_complete_forms_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/fragment_forms__not_complete_forms_header"
+                android:layout_marginTop="10dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

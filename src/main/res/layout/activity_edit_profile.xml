@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.EditProfileActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_edit_profile__guidelineLeft"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="22dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_edit_profile__guidelineRight"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="22dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/activity_edit_profile__back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#fff"
+        android:drawableLeft="@drawable/baseline_keyboard_backspace_black_24"
+        android:fontFamily="@font/rubik_medium"
+        android:paddingHorizontal="0dp"
+        android:stateListAnimator="@null"
+        android:text="Назад"
+        android:textAllCaps="false"
+        android:textColor="#232323"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/activity_edit_profile__guidelineLeft"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/activity_edit_profile__header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_medium"
+        android:text="@string/edit_profile_header"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#232323"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@id/activity_edit_profile__guidelineRight"
+        app:layout_constraintStart_toEndOf="@id/activity_edit_profile__guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/activity_edit_profile__back_btn" />
+
+    <EditText
+        android:id="@+id/activity_edit_profile__edit_name_and_surname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/field"
+        app:layout_constraintStart_toStartOf="@id/activity_edit_profile__guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@id/activity_edit_profile__guidelineRight"
+        app:layout_constraintTop_toBottomOf="@id/activity_edit_profile__header"
+        android:layout_marginTop="20dp"
+        android:hint="@string/name_and_surname"
+        android:paddingVertical="7dp"/>
+
+    <EditText
+        android:id="@+id/activity_edit_profile__telephone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/field"
+        app:layout_constraintStart_toStartOf="@id/activity_edit_profile__guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@id/activity_edit_profile__guidelineRight"
+        app:layout_constraintTop_toBottomOf="@id/activity_edit_profile__edit_name_and_surname"
+        android:layout_marginTop="10dp"
+        android:hint="@string/telephone"
+        android:paddingVertical="7dp"/>
+
+    <TextView
+        android:id="@+id/activity_edit_profile__warning_msg_telephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/errorMsg"
+        app:layout_constraintStart_toStartOf="@id/activity_edit_profile__guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/activity_edit_profile__telephone"
+        android:text=""/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/activity_edit_profile__save_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/GreenButton"
+        app:layout_constraintStart_toStartOf="@id/activity_edit_profile__guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@id/activity_edit_profile__guidelineRight"
+        app:layout_constraintTop_toBottomOf="@id/activity_edit_profile__telephone"
+        android:layout_marginTop="25dp"
+        android:text="Сохранить"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

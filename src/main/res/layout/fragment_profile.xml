@@ -1,46 +1,296 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_fragment__drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.ProfileFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/activity_profile__guidelineLeft"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="22dp"
-            />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/activity_profile__guidelineRight"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="22dp"
-            />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp">
 
-        <TextView
-            android:id="@+id/activity_profile__header"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/activity_profile__guidelineLeft"
-            app:layout_constraintEnd_toStartOf="@id/activity_profile__guidelineRight"
-            android:textAlignment="center"
-            android:fontFamily="@font/rubik_medium"
-            android:textColor="#232323"
-            android:textSize="26sp"
-            android:textAllCaps="false"
-            android:text="Профиль"
-            android:layout_marginTop="19dp"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/activity_profile__guidelineLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="22dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/activity_profile__guidelineRight"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="22dp" />
 
-</FrameLayout>
+                <ImageView
+                    android:id="@+id/fragment_profile__menu_toggle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_menu"
+                    app:layout_constraintEnd_toEndOf="@id/activity_profile__guidelineRight"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_profile__username"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="Name Surname"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="#232323"
+                    android:textSize="26sp"
+                    app:layout_constraintEnd_toStartOf="@id/activity_profile__guidelineRight"
+                    app:layout_constraintStart_toEndOf="@id/activity_profile__guidelineLeft"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fragment_profile__subscribe_btn"
+                    style="@style/GreenButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="30dp"
+                    android:text="@string/subscribe"
+                    app:layout_constraintEnd_toStartOf="@id/activity_profile__guidelineRight"
+                    app:layout_constraintStart_toEndOf="@id/activity_profile__guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_profile__username"/>
+
+                <TextView
+                    android:id="@+id/fragment_profile__end_date_subscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/rubik_regular"
+                    android:text="Дата окончания 27.01"
+                    android:textColor="#979797"
+                    android:textSize="16sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@id/activity_profile__guidelineRight"
+                    app:layout_constraintStart_toEndOf="@id/activity_profile__guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_profile__username" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/fragment_profile__message_btn_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="fragment_profile__end_date_subscribe, fragment_profile__subscribe_btn"
+                    app:layout_constraintEnd_toStartOf="@id/activity_profile__guidelineRight"
+                    app:layout_constraintStart_toEndOf="@id/activity_profile__guidelineLeft" />
+
+                <!--        <LinearLayout-->
+                <!--            android:id="@+id/fragment_profile__progress_header"-->
+                <!--            android:layout_width="0dp"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:orientation="horizontal"-->
+                <!--            app:layout_constraintStart_toEndOf="@id/activity_profile__guidelineLeft"-->
+                <!--            app:layout_constraintEnd_toStartOf="@id/activity_profile__guidelineRight"-->
+                <!--            app:layout_constraintTop_toBottomOf="@id/fragment_profile__message_btn_barrier"-->
+                <!--            android:layout_marginTop="10dp">-->
+
+                <!--            <View-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:background="#DADADA"-->
+                <!--                android:layout_height="2dp"-->
+                <!--                android:layout_weight="30"-->
+                <!--                android:layout_gravity="center"/>-->
+
+                <!--            <TextView-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="@string/progress"-->
+                <!--                android:layout_weight="40"-->
+                <!--                android:gravity="center"-->
+                <!--                android:textSize="20sp"-->
+                <!--                android:fontFamily="@font/rubik_medium"-->
+                <!--                android:textColor="#979797"-->
+                <!--                />-->
+
+                <!--            <View-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:background="#DADADA"-->
+                <!--                android:layout_height="2dp"-->
+                <!--                android:layout_weight="30"-->
+                <!--                android:layout_gravity="center"/>-->
+
+                <!--        </LinearLayout>-->
+
+                <!--        <TextView-->
+                <!--            android:layout_width="0dp"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            app:layout_constraintStart_toEndOf="@id/activity_profile__guidelineLeft"-->
+                <!--            app:layout_constraintEnd_toStartOf="@id/activity_profile__guidelineRight"-->
+                <!--            app:layout_constraintTop_toBottomOf="@id/fragment_profile__progress_header"-->
+                <!--            android:text="Вес: 114кг"-->
+                <!--            />-->
+
+                <View
+                    android:id="@+id/recipe_delimiter__left_line"
+                    android:layout_width="0dp"
+                    android:background="#DADADA"
+                    android:layout_height="2dp"
+                    app:layout_constraintStart_toEndOf="@id/activity_profile__guidelineLeft"
+                    app:layout_constraintEnd_toStartOf="@id/fragment_profile__achievement_header"
+                    app:layout_constraintTop_toTopOf="@id/fragment_profile__achievement_header"
+                    app:layout_constraintBottom_toBottomOf="@id/fragment_profile__achievement_header"
+                    />
+
+                <TextView
+                    android:id="@+id/fragment_profile__achievement_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/achievement"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/rubik_medium"
+                    android:textColor="#979797"
+                    android:paddingHorizontal="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_profile__message_btn_barrier"
+                    />
+
+                <View
+                    android:id="@+id/recipe_delimiter__right_line"
+                    android:layout_width="0dp"
+                    android:background="#DADADA"
+                    android:layout_height="2dp"
+                    app:layout_constraintEnd_toStartOf="@id/activity_profile__guidelineRight"
+                    app:layout_constraintStart_toEndOf="@id/fragment_profile__achievement_header"
+                    app:layout_constraintTop_toTopOf="@id/fragment_profile__achievement_header"
+                    app:layout_constraintBottom_toBottomOf="@id/fragment_profile__achievement_header"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/activity_profile__achievements"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toStartOf="@id/activity_profile__guidelineRight"
+                    app:layout_constraintStart_toEndOf="@id/activity_profile__guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_profile__achievement_header" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingEnd="15dp"
+        android:layout_gravity="end">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/fragment_profile__menu_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Меню"
+                android:textColor="@color/black_text"
+                android:textSize="28sp"
+                android:fontFamily="@font/rubik_medium"
+                android:layout_marginStart="15dp"
+                android:paddingVertical="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_weight="30"
+                android:background="#DADADA"
+                app:layout_constraintStart_toStartOf="@id/fragment_profile__menu_header"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile__menu_header" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_profile__menu_edit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_profile_button"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile__menu_header"
+                app:layout_constraintStart_toStartOf="parent"
+                android:stateListAnimator="@null"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black_text"
+                app:iconGravity="start"
+                app:icon="@drawable/ic_edit_plan"
+                app:iconTint="@color/main_green"
+                android:textSize="17sp"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/rubik_medium"
+                android:letterSpacing="0.03"
+                app:iconSize="25dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_profile__menu_about_us_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile__menu_edit_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                android:stateListAnimator="@null"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black_text"
+                app:iconGravity="start"
+                app:icon="@drawable/ic_info"
+                app:iconTint="@color/main_green"
+                android:textSize="17sp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/rubik_medium"
+                android:letterSpacing="0.03"
+                app:iconSize="25dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_profile__menu_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exit"
+                app:layout_constraintTop_toBottomOf="@id/fragment_profile__menu_about_us_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                android:stateListAnimator="@null"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/error_red"
+                app:iconGravity="start"
+                app:icon="@drawable/ic_exit"
+                app:iconTint="@color/error_red"
+                android:textSize="17sp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/rubik_medium"
+                android:letterSpacing="0.03"
+                app:iconSize="25dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

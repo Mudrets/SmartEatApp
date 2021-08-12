@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.CountOfSnacks">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#68D371">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_count_of_snacks__guidelineLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="22dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_count_of_snacks__guidelineRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="22dp" />
+
+        <TextView
+            android:id="@+id/fragment_count_of_snacks__counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:text="1 из 20"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/fragment_count_of_snacks__guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fragment_count_of_snacks__icon"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="50dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_frying_pan_foreground"
+            app:layout_constraintEnd_toStartOf="@id/fragment_count_of_snacks__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_count_of_snacks__guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_count_of_snacks__question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="75dp"
+            android:fontFamily="@font/rubik_medium"
+            android:gravity="center"
+            android:text="@string/count_of_snacks_text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/fragment_count_of_snacks__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_count_of_snacks__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/fragment_count_of_snacks__icon" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/question_background"
+            android:paddingBottom="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_count_of_snacks__question">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fragment_count_of_snacks_block__guidelineLeft"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="22dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fragment_count_of_snacks_block__guidelineRight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="22dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_count_of_snacks__back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#fff"
+                android:drawableLeft="@drawable/ic_back_arrow"
+                android:fontFamily="@font/rubik_medium"
+                android:paddingHorizontal="0dp"
+                android:stateListAnimator="@null"
+                android:text="Назад"
+                android:textAllCaps="false"
+                android:textColor="#232323"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/fragment_count_of_snacks_block__guidelineLeft"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_count_of_snacks__next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#fff"
+                android:drawableEnd="@drawable/ic_next_arrow"
+                android:fontFamily="@font/rubik_medium"
+                android:paddingHorizontal="0dp"
+                android:stateListAnimator="@null"
+                android:text="Далее"
+                android:textAllCaps="false"
+                android:textColor="#232323"
+                android:textSize="18sp"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toStartOf="@id/fragment_count_of_snacks_block__guidelineRight"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fragment_count_of_snacks__warning_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_medium"
+                android:text="Выберите как минимум два элемента"
+                android:textColor="@color/error_red"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/fragment_count_of_snacks_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_count_of_snacks__back_btn" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_count_of_snacks__checkboxes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@id/fragment_count_of_snacks_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_count_of_snacks__warning_msg" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

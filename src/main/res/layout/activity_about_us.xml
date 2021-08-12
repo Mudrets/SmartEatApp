@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.AboutUsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/activity_about_us__guidelineLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="22dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/activity_about_us__guidelineRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="22dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activity_about_us__back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#fff"
+            android:drawableLeft="@drawable/baseline_keyboard_backspace_black_24"
+            android:fontFamily="@font/rubik_medium"
+            android:paddingHorizontal="0dp"
+            android:stateListAnimator="@null"
+            android:text="Назад"
+            android:textAllCaps="false"
+            android:textColor="#232323"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/activity_about_us__header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/about_us_header"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#232323"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__back_btn" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/activity_about_us__delimiter_who_we_are"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__header">
+
+            <View
+                android:id="@+id/activity_about_us__delimiter_left_line"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="#DADADA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__delimiter_header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/activity_about_us__delimiter_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_medium"
+                android:gravity="center"
+                android:paddingHorizontal="15dp"
+                android:text="@string/who_we_are"
+                android:textColor="#979797"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__delimiter_right_line"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__delimiter_left_line"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/activity_about_us__delimiter_right_line"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="#DADADA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__delimiter_header"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/activity_about_us__image"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/photo"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__delimiter_who_we_are" />
+
+        <TextView
+            android:id="@+id/activity_about_us__name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/full_name_about_us"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#232323"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__image" />
+
+        <TextView
+            android:id="@+id/activity_about_us__smart_eat_creator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_regular"
+            android:gravity="center"
+            android:text="Основатель SmartEat"
+            android:textColor="@color/black_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__name" />
+
+        <ImageView
+            android:id="@+id/activity_about_us__point1"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:src="@drawable/ic_point"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__smart_eat_creator"
+            android:layout_marginTop="17dp"/>
+
+        <TextView
+            android:id="@+id/activity_about_us__point_text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__point1"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__smart_eat_creator"
+            android:text="@string/about_us_point1"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="@color/black_text"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/activity_about_us__point2"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:src="@drawable/ic_point"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__point_text1"
+            android:layout_marginTop="14dp"/>
+
+        <TextView
+            android:id="@+id/activity_about_us__point_text2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__point1"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__point_text1"
+            android:text="@string/about_us_point2"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="@color/black_text"
+            android:layout_marginTop="7dp"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/activity_about_us__point3"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:src="@drawable/ic_point"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__point_text2"
+            android:layout_marginTop="14dp"/>
+
+        <TextView
+            android:id="@+id/activity_about_us__point_text3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__point1"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__point_text2"
+            android:text="@string/about_us_point3"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="@color/black_text"
+            android:layout_marginTop="7dp"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/activity_about_us__point4"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:src="@drawable/ic_point"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__point_text3"
+            android:layout_marginTop="14dp"/>
+
+        <TextView
+            android:id="@+id/activity_about_us__point_text4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__point1"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__point_text3"
+            android:text="@string/about_us_point4"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="@color/black_text"
+            android:layout_marginTop="7dp"
+            android:textSize="16sp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/activity_about_us__delimiter_contacts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__point_text4">
+
+            <View
+                android:id="@id/activity_about_us__delimiter_left_line"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="#DADADA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__delimiter_header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@id/activity_about_us__delimiter_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_medium"
+                android:gravity="center"
+                android:paddingHorizontal="15dp"
+                android:text="@string/contacts"
+                android:textColor="#979797"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__delimiter_right_line"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__delimiter_left_line"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@id/activity_about_us__delimiter_right_line"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="#DADADA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__delimiter_header"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/activity_about_us__contact1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__delimiter_contacts"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/activity_about_us__contact_image1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/whatsapp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__contact_app1"/>
+
+            <TextView
+                android:id="@+id/activity_about_us__contact_app1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__contact_image1"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__contact_info1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/whatsapp"
+                android:textColor="#232323"
+                android:textSize="20sp"
+                android:fontFamily="@font/rubik_medium"
+                android:layout_marginStart="5dp"
+                />
+
+            <TextView
+                android:id="@+id/activity_about_us__contact_info1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__contact_app1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/whatsapp_number"
+                android:textColor="#232323"
+                android:textSize="18sp"
+                android:fontFamily="@font/rubik_regular"
+                android:layout_marginStart="5dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/activity_about_us__contact2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="@id/activity_about_us__contact1"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__contact1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/activity_about_us__contact_image2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/instagram"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__contact_app2"/>
+
+            <TextView
+                android:id="@+id/activity_about_us__contact_app2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__contact_image2"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__contact_info2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/instagram"
+                android:textColor="#232323"
+                android:textSize="20sp"
+                android:fontFamily="@font/rubik_medium"
+                android:layout_marginStart="5dp"
+                />
+
+            <TextView
+                android:id="@+id/activity_about_us__contact_info2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__contact_app2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="\@smarteat_ru"
+                android:textColor="#232323"
+                android:textSize="18sp"
+                android:fontFamily="@font/rubik_regular"
+                android:layout_marginStart="5dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/activity_about_us__contact3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="@id/activity_about_us__contact2"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__contact2"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/activity_about_us__contact_image3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/telephone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__contact_app3"/>
+
+            <TextView
+                android:id="@+id/activity_about_us__contact_app3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__contact_image3"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__contact_info3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/telephone_about_us"
+                android:textColor="#232323"
+                android:textSize="20sp"
+                android:fontFamily="@font/rubik_medium"
+                android:layout_marginStart="5dp"
+                />
+
+            <TextView
+                android:id="@+id/activity_about_us__contact_info3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__contact_app3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/telephone_number"
+                android:textColor="#232323"
+                android:textSize="18sp"
+                android:fontFamily="@font/rubik_regular"
+                android:layout_marginStart="5dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/activity_about_us__delimiter_certificates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__contact3">
+
+            <View
+                android:id="@id/activity_about_us__delimiter_left_line"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="#DADADA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__delimiter_header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@id/activity_about_us__delimiter_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_medium"
+                android:gravity="center"
+                android:paddingHorizontal="15dp"
+                android:text="@string/certificates"
+                android:textColor="#979797"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activity_about_us__delimiter_right_line"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__delimiter_left_line"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@id/activity_about_us__delimiter_right_line"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="#DADADA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/activity_about_us__delimiter_header"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/activity_about_us__certificate1"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__delimiter_certificates"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            android:src="@drawable/certificates1"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/activity_about_us__certificate2"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__certificate1"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            android:src="@drawable/certificates2"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/activity_about_us__certificate3"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__certificate2"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            android:src="@drawable/certificates3"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/activity_about_us__certificate4"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@id/activity_about_us__certificate3"
+            app:layout_constraintStart_toEndOf="@id/activity_about_us__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/activity_about_us__guidelineRight"
+            android:src="@drawable/certificates4"
+            android:layout_marginTop="10dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

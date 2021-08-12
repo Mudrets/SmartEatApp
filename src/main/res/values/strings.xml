@@ -3,4 +3,467 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="error_authorization">Во время авторизации возникла ошибка. Пожалуйста попробуйте войти позже</string>
+    <string name="error_registration">Во время регистрации возникла ошибка. Пожалуйста попробуйте войти позже</string>
+    <string name="error_download_files_with_info">
+        Неудалось загрузить важные файлы с сервера, пожалуста проверьте свое интернет соединение иперезапустите приложение
+    </string>
+    <string name="forms_header">Ваши анкеты</string>
+    <string name="new_form_button_text">Новая анкета</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="height_in_cm">Рост, см</string>
+    <string name="weight_in_kg">Вес, кг</string>
+    <string name="age_in_years">Возраст, лет</string>
+    <string name="goal">Цель</string>
+    <string name="count_of_workouts_in_week">Планируемое количество тренировок в неделю</string>
+    <string name="fitness_level">Оцените Ваш уровень физической подготовки</string>
+    <string name="activity_level">Уровень активности</string>
+    <string name="save_form">Сохранить анкету</string>
+    <string name="plan_properties">Параметры плана</string>
+    <string name="activity_level_in_properties">Уровень физической активности:</string>
+    <string name="goal_property">Цель:</string>
+    <string name="edit_cpfc">Редактировать КБЖУ</string>
+    <string name="not_complete_forms">Незаконченные анкеты</string>
+    <string name="cooking_preferences_text">Сколько раз в неделю вы готовите основные блюда?</string>
+    <string name="subscribe">Оформить подписку</string>
+    <string name="progress">Прогресс</string>
+    <string name="achievement">Достижения</string>
+    <string name="create_plan">Составить план</string>
+    <string name="delete_plan">Удалить</string>
+    <string name="edit_form">Редактировать</string>
+    <string name="copy_plan">Копировать</string>
+    <string name="male">Мужчина</string>
+    <string name="female">Женщина</string>
+    <string name="motherhood_header">Вы беременная или кормящая</string>
+    <string name="warning_msg_about_creating_plan">Для получения плана питания вам необходимо заполнить анкету, чтобы мы получили необходимую информацию для составления плана</string>
+    <string name="welcome_to_smart_eat">Добропожаловать в SmartEat</string>
+    <string name="welcome_content">Предоставляемая нами услуга является платной, но у вас есть возможность воспользоваться пробной неделей, которая предоставляется бесплатно</string>
+    <string name="edit_profile">Редактировать профиль</string>
+    <string name="about_us">О нас</string>
+    <string name="exit">Выход</string>
+    <string name="form_name">Имя анкеты</string>
+    <string name="what_need">Что нужно:</string>
+    <string name="how_cook">Как готовить:</string>
+    <string name="forgot_password">Я забыл пароль</string>
+    <string name="forgot_password_warning_msg">Введите эл. почту указанную при регистрации, и мы вышлем вам ссылку для сброса пароля. Если вы не можете вспомнить свою эл. почту, обратитесь к менеджеру: +7 499 714-64-91</string>
+    <string name="reset_password">Сбросить пароль</string>
+    <string name="back_btn">Назад</string>
+    <string name="enter_header">Войти</string>
+    <string name="enter_btn_text">Войти</string>
+    <string name="signup_btn_text">Регистрация</string>
+    <string name="forgot_password_button">Забыл пароль</string>
+    <string name="advice_header">Совет:</string>
+    <string name="edit_profile_header">Редактирование профиля</string>
+    <string name="name_and_surname">Имя и фамилия</string>
+    <string name="telephone">Телефон</string>
+    <string name="cpfc">КБЖУ</string>
+    <string name="count_gr_pfc_on_kg_weight_of_body">Количество грамм БЖУ на килограмм массы тела</string>
+    <string name="pfc_relation">Соотношение БЖУ, %</string>
+    <string name="amount_calories_of_plan">Каллорийность плана, ккал</string>
+    <string name="result_cpfc">Итоговые значения</string>
+    <string name="save_and_return">Сохранить и вернуться к анкете</string>
+    <string name="about_us_header">О нас</string>
+    <string name="who_we_are">Кто мы?</string>
+    <string name="full_name_about_us">Антон Красавин</string>
+    <string name="contacts">Контакты</string>
+    <string name="about_us_point1">Сертифицированный нутрициолог (Колледж фитнеса и бодибилдинга им. Бена Вейдера)</string>
+    <string name="about_us_point2">Составляет планы питания более 5 лет</string>
+    <string name="about_us_point3">Разработал программу, которая делает идеальную разбивку по КБЖУ в зависимости от целей и особенностей человека</string>
+    <string name="about_us_point4">Составил уже свыше 4000 планов питания</string>
+    <string name="whatsapp">WhatsApp:</string>
+    <string name="whatsapp_number">+7 977 634-71-60</string>
+    <string name="instagram">Instagram:</string>
+    <string name="instagram_contact">/@smarteat_ru</string>
+    <string name="telephone_about_us">Телефон:</string>
+    <string name="telephone_number">+7 499 714-64-91</string>
+    <string name="certificates">Сертификаты</string>
+    <string name="edit_profile_button">Редактировать профиль</string>
+    <string name="final_form_settings">Настройте параметры своего плана для себя</string>
+    <string name="count_of_snacks_text">Укажите какие из перекусов вы хотите иметь в плане?</string>
+    <string-array name="snacks">
+        <item>Утренний</item>
+        <item>Дневной</item>
+        <item>Вечерний</item>
+    </string-array>
+    <string-array name="categories_names">
+        <item>Бакалея</item>
+        <item>Молочные продукты</item>
+        <item>Птица и мясо</item>
+        <item>Морепродукты</item>
+        <item>Овощи и фрукты</item>
+        <item>Сухофрукты</item>
+        <item>Сладости</item>
+        <item>Специи и соусы</item>
+        <item>Другое</item>
+    </string-array>
+    <string-array name="motherhood">
+        <item>Не беременна/не кормящая</item>
+        <item>Беременная</item>
+        <item>Кормление 1–6 месяцев</item>
+        <item>Кормление 7–12 месяцев</item>
+        <item>Выберите значение …</item>
+    </string-array>
+    <string-array name="cooking_preferences">
+        <item>Каждый день</item>
+        <item>3–4 раза в неделю</item>
+        <item>1–2 раза в неделю</item>
+        <item>Выберите значение …</item>
+    </string-array>
+    <string-array name="goals">
+        <item>Похудеть (убрать жир)</item>
+        <item>Поддерживать свою форму</item>
+        <item>Набрать мышечную массу</item>
+        <item>Выберите значение …</item>
+    </string-array>
+    <string-array name="fitness_level">
+        <item>Новичок</item>
+        <item>Тренированный (регулярные занятия спортом более 2-х раз в неделю больше года)</item>
+        <item>Спортсмен-любитель (регулярные занятия спортом более 4-х раз в неделю более 3-х лет)</item>
+        <item>Спортсмен</item>
+        <item>Выберите значение …</item>
+    </string-array>
+    <string-array name="activity_level">
+        <item>Сидячая работа, малоподвижный образ жизни</item>
+        <item>Сидячая работа, среднеактивный образ жизни</item>
+        <item>Работа связана с физической нагрузкой, очень активынй образ жизни</item>
+        <item>Выберите значение …</item>
+    </string-array>
+    <string-array name="amount_of_workouts">
+        <item>20</item>
+        <item>19</item>
+        <item>18</item>
+        <item>17</item>
+        <item>16</item>
+        <item>15</item>
+        <item>14</item>
+        <item>13</item>
+        <item>12</item>
+        <item>11</item>
+        <item>10</item>
+        <item>9</item>
+        <item>8</item>
+        <item>7</item>
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+        <item>Выберите значение …</item>
+    </string-array>
+    <string-array name="cereals">
+        <item>Гречка</item>
+        <item>Рис белый</item>
+        <item>Овсянка</item>
+        <item>Пшенка</item>
+        <item>Перловка</item>
+        <item>Макароны из твердых сортов пшеницы</item>
+        <item>Чечевица</item>
+        <item>Картофель</item>
+        <item>Булгур</item>
+        <item>Кускус</item>
+        <item>Рис бурый</item>
+        <item>Рис дикий</item>
+        <item>Горох сушенный</item>
+        <item>Нут</item>
+        <item>Киноа</item>
+        <item>Кукурузная крупа</item>
+        <item>Ячневая крупа</item>
+        <item>Манная крупа</item>
+        <item>Батат</item>
+        <item>Полба</item>
+        <item>Льняная каша</item>
+        <item>Макароны без глютена</item>
+        <item>Ржаная крупа</item>
+        <item>Пшеничная крупа</item>
+        <item>Ячменная крупа</item>
+        <item>Гречневая лапша</item>
+        <item>Рисовая лапша</item>
+        <item>Фунчоза</item>
+    </string-array>
+    <string-array name="flour_products">
+        <item>Цельнозерновой хлеб</item>
+        <item>Хлебцы (ржаные; мультизлаковые и т.п.)</item>
+        <item>Хлеб ржаной/черный</item>
+        <item>Лаваш бездрожжевой</item>
+        <item>Хлеб пшеничный</item>
+    </string-array>
+    <string-array name="meat_and_poultry">
+        <item>Курица</item>
+        <item>Индейка</item>
+        <item>Говядина</item>
+        <item>Телятина</item>
+        <item>Свинина</item>
+        <item>Баранина</item>
+        <item>Кролик</item>
+        <item>Говяжья печень</item>
+        <item>Куриная печень</item>
+        <item>Куриные желудочки</item>
+        <item>Куриные сердечки</item>
+        <item>Утка</item>
+        <item>Лосятина</item>
+        <item>Оленина</item>
+        <item>Кабан</item>
+        <item>Косуля</item>
+        <item>Конина</item>
+        <item>Нутрия</item>
+    </string-array>
+    <string-array name="seafood">
+        <item>Тилапия</item>
+        <item>Судак</item>
+        <item>Дорадо</item>
+        <item>Карп</item>
+        <item>Окунь</item>
+        <item>Треска</item>
+        <item>Минтай</item>
+        <item>Семга</item>
+        <item>Лосось</item>
+        <item>Горбуша</item>
+        <item>Форель</item>
+        <item>Тунец конс.</item>
+        <item>Креветки</item>
+        <item>Кальмары</item>
+        <item>Мидии</item>
+        <item>Коктейль из морепродуктов</item>
+        <item>Икра минтаевая</item>
+        <item>Икра щучья</item>
+        <item>Икра красная</item>
+        <item>Красная рыба с/с</item>
+        <item>Амур</item>
+        <item>Белуга</item>
+        <item>Голец</item>
+        <item>Гребешки</item>
+        <item>Дори</item>
+        <item>Желтохвост/лакедра</item>
+        <item>Зубатка синяя</item>
+        <item>Камбала</item>
+        <item>Карась</item>
+        <item>Кета</item>
+        <item>Кефаль</item>
+        <item>Кижуч</item>
+        <item>Корюшка</item>
+        <item>Крабы</item>
+        <item>Ленок</item>
+        <item>Лещ</item>
+        <item>Лимонелла</item>
+        <item>Мойва</item>
+        <item>Морской язык</item>
+        <item>Муксук</item>
+        <item>Навага</item>
+        <item>Нерка</item>
+        <item>Осетр</item>
+        <item>Осьминоги</item>
+        <item>Палтус</item>
+        <item>Пангасиус</item>
+        <item>Пеленгас</item>
+        <item>Пелядь</item>
+        <item>Пикша</item>
+        <item>Путассу</item>
+        <item>Ряпушка</item>
+        <item>Сазан</item>
+        <item>Сардина</item>
+        <item>Севрюга</item>
+        <item>Сибас</item>
+        <item>Скумбрия</item>
+        <item>Сом</item>
+        <item>Терпуг</item>
+        <item>Толстолобик</item>
+        <item>Тунец</item>
+        <item>Хариус</item>
+        <item>Хек</item>
+        <item>Чик/щокур</item>
+        <item>Щука</item>
+    </string-array>
+    <string-array name="dairy_products">
+        <item>Молоко</item>
+        <item>Творог</item>
+        <item>Сметана</item>
+        <item>Сыр нежирный (до 20%)</item>
+        <item>Сыр обычный (40%)</item>
+        <item>Брынза</item>
+        <item>Йогурт</item>
+        <item>Кефир</item>
+        <item>Ряженка</item>
+        <item>Молоко без лакт.</item>
+        <item>Молоко обезж.</item>
+        <item>Молоко растительное</item>
+        <item>Сыр козий</item>
+        <item>Сыр Сулугуни</item>
+        <item>Фета</item>
+        <item>Моцарелла</item>
+        <item>Рикотта</item>
+        <item>Сыр творожный</item>
+        <item>Сыр филадельфия</item>
+        <item>Ацидофилин</item>
+        <item>Мацони</item>
+        <item>Айран</item>
+    </string-array>
+    <string-array name="vegetables">
+        <item>Помидоры</item>
+        <item>Огурцы</item>
+        <item>Перец сладкий</item>
+        <item>Лук репчатый</item>
+        <item>Морковь</item>
+        <item>Листья салата</item>
+        <item>Зелень (укроп. петрушка и др.)</item>
+        <item>Шпинат</item>
+        <item>Чеснок</item>
+        <item>Кабачок</item>
+        <item>Цв. Капуста</item>
+        <item>Фасоль стручк.</item>
+        <item>Авокадо</item>
+        <item>Грибы</item>
+        <item>Розмарин</item>
+        <item>Сельдерей</item>
+        <item>Пекинская капуста</item>
+        <item>Руккола</item>
+        <item>Морская капуста</item>
+        <item>Оливки</item>
+        <item>Маслины</item>
+    </string-array>
+    <string-array name="fruits">
+        <item>Яблоко</item>
+        <item>Груша</item>
+        <item>Банан</item>
+        <item>Мандарин</item>
+        <item>Апельсин</item>
+        <item>Киви</item>
+        <item>Лимон</item>
+        <item>Ягоды зам./свежие</item>
+        <item>Виноград</item>
+        <item>Слива</item>
+        <item>Грейпфрут</item>
+        <item>Гранат</item>
+        <item>Хурма</item>
+        <item>Персик</item>
+        <item>Абрикос</item>
+        <item>Вишня</item>
+        <item>Черешня</item>
+        <item>Манго</item>
+        <item>Арбуз</item>
+        <item>Дыня</item>
+    </string-array>
+    <string-array name="eggs">
+        <item>Белок</item>
+        <item>Желток</item>
+    </string-array>
+    <string-array name="oil">
+        <item>Масло подсолнечное</item>
+        <item>Масло олив.</item>
+        <item>Масло льняное</item>
+    </string-array>
+    <string-array name="sweets">
+        <item>Мед</item>
+        <item>Варенье</item>
+        <item>Конфитюр/джем</item>
+        <item>Джем zero</item>
+        <item>Арахисовая паста</item>
+        <item>Кокосовая паста</item>
+        <item>Сгущенка</item>
+    </string-array>
+    <string-array name="nuts">
+        <item>Миндаль</item>
+        <item>Грецкий орех</item>
+        <item>Фундук</item>
+        <item>Пекан</item>
+        <item>Кешью</item>
+        <item>Фисташки</item>
+        <item>Арахис</item>
+        <item>Кедровые орехи</item>
+        <item>Макадамия</item>
+        <item>Кокос</item>
+        <item>Бразильский орех</item>
+    </string-array>
+    <string-array name="dried_fruits">
+        <item>Курага</item>
+        <item>Финики</item>
+        <item>Изюм</item>
+        <item>Чернослив</item>
+        <item>Инжир</item>
+        <item>Дыня (сухофрукт)</item>
+        <item>Яблоки сушеные</item>
+        <item>Груши сушеные</item>
+        <item>Вишня сушеная</item>
+        <item>Манго сушеный</item>
+        <item>Банан сушеный</item>
+    </string-array>
+    <string-array name="legumes">
+        <item>Кукуруза</item>
+        <item>Горошек</item>
+        <item>Фасоль</item>
+    </string-array>
+    <string-array name="toppings_and_spices">
+        <item>Семечки тыкв.</item>
+        <item>Семечки подс.</item>
+        <item>Семена льна</item>
+        <item>Кунжут</item>
+        <item>Прованские травы</item>
+        <item>Сушеная зелень (приправы)</item>
+        <item>Лавровый лист</item>
+        <item>Чиа</item>
+        <item>Тмин</item>
+        <item>Корица</item>
+    </string-array>
+    <string-array name="sauce">
+        <item>Томатная паста</item>
+        <item>Соевый соус</item>
+        <item>Хрен сливочный</item>
+    </string-array>
+    <string-array name="soy_products">
+        <item>Тофу</item>
+        <item>Соевое мясо</item>
+    </string-array>
+    <string-array name="impossible_to_refuse">
+        <item>Зефир</item>
+        <item>Мармелад</item>
+        <item>Шоколад</item>
+        <item>Печенье затяжное</item>
+        <item>Печенье овсяное</item>
+        <item>Вафли с фрукт. нач.</item>
+    </string-array>
+    <string-array name="questions">
+        <item>Какие крупы/гарниры вы едите? (План без круп мы не составляем)</item>
+        <item>Какие мучные изделия вы едите?</item>
+        <item>Что из списка ниже есть в вашем рационе (мясо, птица)?</item>
+        <item>Что из списка ниже есть в вашем рационе (рыба, морепродукты)?</item>
+        <item>Какую молочку и кисломолочку вы едите?</item>
+        <item>Какие овощи вы едите? (учитывайте сезонность)</item>
+        <item>Какие фрукты вы едите? (учитывайте сезонность)</item>
+        <item>Едите ли вы яйца?</item>
+        <item>Какие масла вы используете?</item>
+        <item>Что из списка сладкого ниже вы любите?</item>
+        <item>Едите ли вы орехи? Если да, то какие?</item>
+        <item>Какие сухофрукты вам нравятся?</item>
+        <item>Какие бобовые вы едите?</item>
+        <item>Что из списка ниже вы добавляете в еду (топпинги, специи)?</item>
+        <item>Какие соусы вам нравятся?</item>
+        <item>Едите ли вы что-то из соевых продуктов?</item>
+        <item>От чего вы не готовы отказаться?</item>
+    </string-array>
+    <string-array name="achievementNames">
+        <item>Первый вход</item>
+        <item>Первый шаг</item>
+        <item>Скупщик</item>
+        <item>Первая неделя</item>
+    </string-array>
+    <string-array name="achievementDescription">
+        <item>Войти в мобильное приложение SmartEat первый раз</item>
+        <item>Сделать первый шаг на пути к здоровому питанию, составим план</item>
+        <item>Купить все необходимые на неделе продукты</item>
+        <item>Пользоваться приложением на протяжении недели</item>
+    </string-array>
+    <string-array name="info">
+        <item>Сертифицированный нутрициолог (Колледж фитнеса и бодибилдинга им. Бена Вейдера)</item>
+        <item>Составляет планы питания более 5 лет</item>
+        <item>Разработал программу, которая делает идеальную разбивку по КБЖУ в зависимости от целей и особенностей человека</item>
+        <item>Составил уже свыше 4000 планов питания</item>
+    </string-array>
+    <string-array name="subscribePoints">
+        <item>Личный диетолог круглосуточно в твоем телефоне</item>
+        <item>Не нужно постоянно считать КБЖУ</item>
+        <item>Индивидуальный план питания, который всегда с тобой</item>
+        <item>Простые и вкусные рецепты</item>
+        <item>Экономия времени и денег с готовым списком покупок</item>
+    </string-array>
 </resources>

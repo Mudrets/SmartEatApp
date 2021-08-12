@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.FinalSettingsOfFormFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#68D371">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_final_settings_of_form__guidelineLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="22dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_final_settings_of_form__guidelineRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="22dp" />
+
+        <TextView
+            android:id="@+id/fragment_final_settings_of_form__counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:text="20 из 20"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form__guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fragment_final_settings_of_form__icon"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="50dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_racing_flag_foreground"
+            app:layout_constraintEnd_toStartOf="@id/fragment_final_settings_of_form__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form__guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_final_settings_of_form__question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:gravity="center"
+            android:text="@string/final_form_settings"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/fragment_final_settings_of_form__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__icon"
+            android:minHeight="75dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/question_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__question"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fragment_final_settings_of_form_block__guidelineLeft"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="22dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fragment_final_settings_of_form_block__guidelineRight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="22dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_final_settings_of_form__back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#fff"
+                android:drawableLeft="@drawable/ic_back_arrow"
+                android:fontFamily="@font/rubik_medium"
+                android:paddingHorizontal="0dp"
+                android:stateListAnimator="@null"
+                android:text="Назад"
+                android:textAllCaps="false"
+                android:textColor="#232323"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form_block__guidelineLeft"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fragment_final_settings_of_form__edit_cpfc_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#EBF5FF"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="@id/fragment_final_settings_of_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__back_btn">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="45dp">
+
+                    <ImageView
+                        android:id="@+id/fragment_final_settings_of_form__star"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_star"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/rubik_medium"
+                        android:text="@string/plan_properties"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black_text"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form__star"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__activity_level_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/activity_level_in_properties"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__header" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__activity_level_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Сидячая работа, малоподвижный образ жизни"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__activity_level_header" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__goal_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/goal_property"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__activity_level_value" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__goal_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Похудеть (убрать жир)"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__goal_header" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__height_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="177"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__goal_value" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__height_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Рост"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__height_value" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/fragment_final_settings_of_form__height_barrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="end"
+                        app:constraint_referenced_ids="fragment_final_settings_of_form__height_header, fragment_final_settings_of_form__height_value, fragment_final_settings_of_form__protein_value, fragment_final_settings_of_form__protein_header" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__weight_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="65"
+                        app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form__height_barrier"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__goal_value" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__weight_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Вес"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__weight_value"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__weight_value" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/fragment_final_settings_of_form__weight_barrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="end"
+                        app:constraint_referenced_ids="fragment_final_settings_of_form__weight_header, fragment_final_settings_of_form__weight_value, fragment_final_settings_of_form__fats_value, fragment_final_settings_of_form__fats_header" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__age_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="18"
+                        app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form__weight_barrier"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__goal_value" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__age_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Возраст"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__age_value"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__age_value" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/fragment_final_settings_of_form__age_barrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="end"
+                        app:constraint_referenced_ids="fragment_final_settings_of_form__age_header, fragment_final_settings_of_form__age_value, fragment_final_settings_of_form__carbohydrates_header, fragment_final_settings_of_form__carbohydrates_value" />
+
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__sex_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="М"
+                        app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form__age_barrier"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__goal_value" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__sex_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Пол"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__sex_value"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__sex_value" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__protein_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="99"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__height_header" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__protein_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Белки"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__protein_value"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__protein_value" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__fats_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="88"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__height_barrier"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__height_header" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__fats_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="Жиры"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__height_barrier"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__protein_value" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__carbohydrates_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="362"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__weight_barrier"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__height_header" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__carbohydrates_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="Углеводы"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__weight_barrier"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__protein_value" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__calories_value"
+                        style="@style/valueOfProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="2634"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__age_barrier"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__height_header" />
+
+                    <TextView
+                        android:id="@+id/fragment_final_settings_of_form__calories_header"
+                        style="@style/subHeaderProperties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="Ккал"
+                        app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form__age_barrier"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__protein_value" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fragment_final_settings_of_form__edit_cpfc_btn"
+                        style="@style/transparentButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/edit_cpfc"
+                        android:textSize="14sp"
+                        app:cornerRadius="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__protein_header" />
+
+                    <TextView
+                        style="@style/subHeaderProperties"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Вы можете отредактировать КБЖУ плана СЕЙЧАС"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__edit_cpfc_btn" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_final_settings_of_form__save_btn"
+                style="@style/GreenButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:paddingHorizontal="40dp"
+                android:paddingVertical="10dp"
+                android:text="@string/save_form"
+                app:layout_constraintEnd_toStartOf="@id/fragment_final_settings_of_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_final_settings_of_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__edit_cpfc_card" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="70dp"
+                app:layout_constraintEnd_toEndOf="@id/fragment_final_settings_of_form_block__guidelineRight"
+                app:layout_constraintStart_toStartOf="@id/fragment_final_settings_of_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_final_settings_of_form__save_btn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

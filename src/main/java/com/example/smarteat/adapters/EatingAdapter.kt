@@ -13,18 +13,25 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smarteat.R
 import com.example.smarteat.models.Eating
+import com.example.smarteat.ui.dialogs.DialogOneButton
+import com.example.smarteat.ui.fragments.FragmentWithPlan
 
 class EatingAdapter(
-    private val eating: ArrayList<Eating>
+    private val eating: ArrayList<Eating>,
+    private val parentFragment: FragmentWithPlan
 ) : RecyclerView.Adapter<EatingAdapter.EatingViewHolder>() {
 
     inner class EatingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.eating_row__eating_name)
+        val recipeNameTextView: TextView = itemView.findViewById(R.id.eating_row__recipe_name)
         val line : View = itemView.findViewById(R.id.eating_row__line)
         val arrowIcon : ImageView = itemView.findViewById(R.id.eating_row__main_arrow)
         val expandedProperties : CardView = itemView.findViewById(R.id.eating_row__expanded_properties)
         val ingredients : RecyclerView = itemView.findViewById(R.id.eating_row__ingredients_list)
+        val properties: TextView = itemView.findViewById(R.id.eating_row__properties)
+        val headerWrapper: ViewGroup = itemView.findViewById(R.id.eating_row__header_wrapper)
         val view: View = itemView
+        val recipeCard: CardView = itemView.findViewById(R.id.eating_row__recipe_card)
 
         init {
             val clickListener = View.OnClickListener { _ ->
@@ -32,13 +39,33 @@ class EatingAdapter(
                 e.isExpanded = !e.isExpanded
                 notifyItemChanged(adapterPosition)
             }
+
+            val recipeCardOnClickListener = View.OnClickListener {
+                val e = eating[adapterPosition]
+                val recipes = parentFragment.user.activePlan!!.recipes[e.recipeNum / 100 - 1]
+                val recipePositions = ArrayList<Pair<Int, Int>>()
+                for (recipe in e.recipes) {
+                    val index = recipes.indexOf(recipe)
+                    recipePositions.add(Pair(e.recipeNum / 100 - 1, index))
+                }
+                if (recipePositions.isNotEmpty())
+                    parentFragment.parentActivity.showRecipe(recipePositions)
+                else {
+                    val dialog = DialogOneButton(
+                        "Нет рецепта",
+                        "К сожалению, для выбранного вами блюда нет рецепта, так как его приготовление является достаточно простым и не требует описания.",
+                        "Продолжить"
+                    )
+                    parentFragment.parentActivity.showDialog(dialog)
+                }
+
+            }
+            recipeCard.setOnClickListener(recipeCardOnClickListener)
+            ingredients.setOnClickListener(recipeCardOnClickListener)
+            headerWrapper.setOnClickListener(clickListener)
             arrowIcon.setOnClickListener(clickListener)
             nameTextView.setOnClickListener(clickListener)
-            ingredients.layoutManager = object : LinearLayoutManager(itemView.context) {
-                override fun canScrollVertically(): Boolean {
-                    return false
-                }
-            }
+            ingredients.layoutManager = LinearLayoutManager(itemView.context)
         }
     }
 
@@ -66,8 +93,11 @@ class EatingAdapter(
 
     override fun onBindViewHolder(holder: EatingViewHolder, position: Int) {
         val currEating = eating[position]
+
         holder.nameTextView.text = translate(currEating.name)
-        holder.ingredients.adapter = IngredientsAdapter(currEating.ingredients)
+        holder.properties.text = currEating.stringProperties
+        holder.recipeNameTextView.text = "${currEating.recipeName}:"
+        holder.ingredients.adapter = IngredientsAdapter(currEating.ingredients, parentFragment, currEating)
 
         if (position == eating.size - 1)
             holder.line.visibility = View.GONE

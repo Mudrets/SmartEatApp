@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="30dp">
+
+    <CheckBox
+        android:id="@+id/checkbox_row__checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="#455571"
+        android:text="Хлебцы (ржанные; мультизлаковые и т.п.)"
+        android:fontFamily="@font/rubik_regular"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:textColor="#232323"
+        />
+
+</RelativeLayout>

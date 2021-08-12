@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="70dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_edit_cpfc__guidelineLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="22dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_edit_cpfc__guidelineRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="22dp" />
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/cpfc"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#232323"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fragment_edit_cpfc__general_exchange"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__day_energy_consumption"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__general_exchange_count_calories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_regular"
+                    android:text="1673"
+                    android:textColor="@color/black_text"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__general_exchange_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_regular"
+                    android:maxWidth="90dp"
+                    android:text="Основной обмен, ккал"
+                    android:textColor="@color/black_text"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__general_exchange_count_calories" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__general_exchange_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/rubik_regular"
+                    android:maxWidth="120dp"
+                    android:text="Ниже вредно для здоровья"
+                    android:textColor="#8A94A6"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__general_exchange_text" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fragment_edit_cpfc__day_energy_consumption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__general_exchange"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__count_calories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_regular"
+                    android:text="2633"
+                    android:textColor="@color/black_text"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__day_energy_consumption_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_regular"
+                    android:maxWidth="130dp"
+                    android:text="Суточные энергозатраты, ккал"
+                    android:textColor="@color/black_text"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__count_calories" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__day_energy_consumption_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/rubik_regular"
+                    android:maxWidth="120dp"
+                    android:text="по Миффлину-Сан Жеору"
+                    android:textColor="#8A94A6"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__day_energy_consumption_text" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__day_energy_consumption"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__guidelineRight"
+            android:layout_marginTop="15dp"
+            android:text="@string/count_gr_pfc_on_kg_weight_of_body"
+            android:gravity="start"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="15sp"
+            android:textColor="@color/black_text"/>
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__proteins"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Белки, гр"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="#979797"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__subtitle"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__fats"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__fats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Жиры, гр"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__subtitle"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__proteins"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__carbohydrates"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="#979797"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__carbohydrates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Углеводы, гр"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__subtitle"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__fats"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="#979797"
+            android:textSize="13sp"/>
+
+        <EditText
+            android:id="@+id/fragment_edit_cpfc__proteins_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/field"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__proteins"
+            app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__proteins"
+            app:layout_constraintEnd_toEndOf="@id/fragment_edit_cpfc__proteins"
+            android:layout_marginEnd="15dp"
+            android:paddingVertical="5dp"
+            />
+
+        <EditText
+            android:id="@+id/fragment_edit_cpfc__fats_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/field"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__fats"
+            app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__fats"
+            app:layout_constraintEnd_toEndOf="@id/fragment_edit_cpfc__fats"
+            android:layout_marginEnd="15dp"
+            android:paddingVertical="5dp"
+            />
+
+        <EditText
+            android:id="@+id/fragment_edit_cpfc__carbohydrates_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/field"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__carbohydrates"
+            app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__carbohydrates"
+            app:layout_constraintEnd_toEndOf="@id/fragment_edit_cpfc__carbohydrates"
+            android:paddingVertical="5dp"
+            android:layout_marginEnd="15dp"/>
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__subtitle_relative_pfc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pfc_relation"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__proteins_field"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__guidelineRight"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black_text"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__amount_calories_of_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__subtitle_relative_pfc"
+            android:text="@string/amount_calories_of_plan"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="#979797"
+            android:textSize="13sp"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/fragment_edit_cpfc__amount_calories_of_plan_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__guidelineRight"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__amount_calories_of_plan"
+            style="@style/field"
+            android:paddingVertical="5dp"
+            />
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__proteins_percent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Белки, %"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="#979797"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__amount_calories_of_plan_field"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__fats_percent"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__fats_percent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Жиры, %"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__amount_calories_of_plan_field"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__proteins_percent"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__carbohydrates_percent"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="#979797"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__carbohydrates_percent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Углеводы, %"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__amount_calories_of_plan_field"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__fats_percent"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="#979797"
+            android:textSize="13sp"/>
+
+        <EditText
+            android:id="@+id/fragment_edit_cpfc__proteins_field_percent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/field"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__proteins_percent"
+            app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__proteins_percent"
+            app:layout_constraintEnd_toEndOf="@id/fragment_edit_cpfc__proteins_percent"
+            android:layout_marginEnd="15dp"
+            android:paddingVertical="5dp"
+            />
+
+        <EditText
+            android:id="@+id/fragment_edit_cpfc__fats_field_percent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/field"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__fats_percent"
+            app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__fats_percent"
+            app:layout_constraintEnd_toEndOf="@id/fragment_edit_cpfc__fats_percent"
+            android:layout_marginEnd="15dp"
+            android:paddingVertical="5dp"
+            />
+
+        <EditText
+            android:id="@+id/fragment_edit_cpfc__carbohydrates_field_percent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/field"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__carbohydrates_percent"
+            app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__carbohydrates_percent"
+            app:layout_constraintEnd_toEndOf="@id/fragment_edit_cpfc__carbohydrates_percent"
+            android:paddingVertical="5dp"
+            android:layout_marginEnd="15dp"/>
+
+        <TextView
+            android:id="@+id/fragment_edit_cpfc__warning_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/fragment_edit_cpfc__carbohydrates_field_percent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__carbohydrates_field_percent"
+            android:text=""
+            style="@style/errorMsg"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fragment_edit_cpfc__edit_cpfc_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#EBF5FF"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="@id/fragment_edit_cpfc__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__warning_msg"
+            android:layout_marginTop="15dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="30dp">
+
+                <ImageView
+                    android:id="@+id/fragment_edit_cpfc__star"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_star"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__result_card_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="@string/result_cpfc"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_text"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__star"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__proteins_value"
+                    style="@style/valueOfProperty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="177"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__result_card_header" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__proteins_header"
+                    style="@style/subHeaderProperties"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Белки, грамм"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__proteins_value" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/fragment_edit_cpfc__height_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="fragment_edit_cpfc__proteins_header, fragment_edit_cpfc__proteins_value, fragment_edit_cpfc__calories_value, fragment_edit_cpfc__calories_header" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__fats_value"
+                    style="@style/valueOfProperty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="65"
+                    app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__height_barrier"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__result_card_header" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__fats_header"
+                    style="@style/subHeaderProperties"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Жиры, грамм"
+                    app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__fats_value"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__fats_value" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/fragment_edit_cpfc__weight_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="fragment_edit_cpfc__fats_header, fragment_edit_cpfc__fats_value" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__carbohydrates_value"
+                    style="@style/valueOfProperty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="18"
+                    app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__weight_barrier"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__result_card_header" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__carbohydrates_header"
+                    style="@style/subHeaderProperties"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Углеводы, грамм"
+                    app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__carbohydrates_value"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__carbohydrates_value" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__calories_value"
+                    style="@style/valueOfProperty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="99"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__proteins_header" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__calories_header"
+                    style="@style/subHeaderProperties"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ккал"
+                    app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__calories_value"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__calories_value" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__surplus"
+                    style="@style/valueOfProperty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="99"
+                    app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__fats_value"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__proteins_header" />
+
+                <TextView
+                    android:id="@+id/fragment_edit_cpfc__surplus_header"
+                    style="@style/subHeaderProperties"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Профицит"
+                    app:layout_constraintStart_toStartOf="@id/fragment_edit_cpfc__surplus"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__calories_value" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_edit_cpfc__save_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_cpfc__edit_cpfc_card"
+            app:layout_constraintStart_toEndOf="@id/fragment_edit_cpfc__guidelineLeft"
+            app:layout_constraintEnd_toStartOf="@id/fragment_edit_cpfc__guidelineRight"
+            style="@style/GreenButton"
+            android:layout_marginTop="20dp"
+            android:text="@string/save_and_return"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

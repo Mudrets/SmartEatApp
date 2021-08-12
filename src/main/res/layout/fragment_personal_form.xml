@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.PersonalFormFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#68D371">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_personal_form__guidelineLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="22dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_personal_form__guidelineRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="22dp" />
+
+        <TextView
+            android:id="@+id/fragment_personal_form__counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik_regular"
+            android:text="1 из 20"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/fragment_personal_form__guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fragment_personal_form__icon"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="50dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_back_foreground"
+            app:layout_constraintEnd_toStartOf="@id/fragment_personal_form__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_personal_form__guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_personal_form__question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="75dp"
+            android:fontFamily="@font/rubik_medium"
+            android:gravity="center"
+            android:text="Характеристики вашего тела"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/fragment_personal_form__guidelineRight"
+            app:layout_constraintStart_toEndOf="@id/fragment_personal_form__guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__icon" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/question_background"
+            android:paddingBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__question"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fragment_personal_form_block__guidelineLeft"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="22dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fragment_personal_form_block__guidelineRight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="22dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fragment_personal_form__next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#fff"
+                android:drawableEnd="@drawable/ic_next_arrow"
+                android:fontFamily="@font/rubik_medium"
+                android:paddingHorizontal="0dp"
+                android:stateListAnimator="@null"
+                android:text="Далее"
+                android:textAllCaps="false"
+                android:textColor="#232323"
+                android:textSize="18sp"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fragment_personal_form__error_msg"
+                style="@style/errorMsg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Сообщение об ошибке"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__next_btn" />
+
+            <LinearLayout
+                android:id="@+id/fragment_personal_form__main_characteristics"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__error_msg">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/topDesignation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/height_in_cm" />
+
+                    <EditText
+                        android:id="@+id/fragment_personal_form__height_field"
+                        style="@style/field"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:textColor="@color/black_text"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/topDesignation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/weight_in_kg" />
+
+                    <EditText
+                        android:id="@+id/fragment_personal_form__weight_field"
+                        style="@style/field"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:textColor="@color/black_text"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/topDesignation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/age_in_years" />
+
+                    <EditText
+                        android:id="@+id/fragment_personal_form__age_field"
+                        style="@style/field"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:textColor="@color/black_text"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fragment_personal_form__goal_header"
+                style="@style/topDesignation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/goal"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__gender_group" />
+
+            <RelativeLayout
+                android:id="@+id/fragment_personal_form__goal_selector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="3dp"
+                android:background="@drawable/authorization_edit_text_border"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__goal_header">
+
+                <Spinner
+                    android:id="@+id/fragment_personal_form__goal_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:entries="@array/goals"
+                    android:foregroundGravity="center"
+                    android:paddingEnd="50dp"
+                    android:spinnerMode="dropdown" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_more_arrow" />
+
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/fragment_personal_form__gender_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__main_characteristics">
+
+                <RadioButton
+                    android:id="@+id/fragment_personal_form__male_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:buttonTint="#455571"
+                    android:fontFamily="@font/rubik_regular"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/fragment_personal_form__female_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:buttonTint="#455571"
+                    android:fontFamily="@font/rubik_regular"
+                    android:text="@string/female" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/fragment_personal_form__count_of_workouts_header"
+                style="@style/topDesignation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/count_of_workouts_in_week"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__goal_selector" />
+
+            <RelativeLayout
+                android:id="@+id/fragment_personal_form__count_of_workouts_selector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="3dp"
+                android:background="@drawable/authorization_edit_text_border"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__count_of_workouts_header">
+
+                <Spinner
+                    android:id="@+id/fragment_personal_form__count_of_workouts_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:entries="@array/amount_of_workouts"
+                    android:foregroundGravity="center"
+                    android:paddingEnd="50dp"
+                    android:spinnerMode="dropdown"
+                    android:gravity=""
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_more_arrow" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/fragment_personal_form__fitness_level_header"
+                style="@style/topDesignation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/fitness_level"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__count_of_workouts_selector" />
+
+
+            <RelativeLayout
+                android:id="@+id/fragment_personal_form__fitness_level_selector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="3dp"
+                android:background="@drawable/authorization_edit_text_border"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__fitness_level_header">
+
+                <Spinner
+                    android:id="@+id/fragment_personal_form__fitness_level_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:entries="@array/fitness_level"
+                    android:foregroundGravity="center"
+                    android:paddingEnd="50dp"
+                    android:spinnerMode="dropdown" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_more_arrow" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/fragment_personal_form__activity_level_header"
+                style="@style/topDesignation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/activity_level"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__fitness_level_selector" />
+
+            <RelativeLayout
+                android:id="@+id/fragment_personal_form__activity_level_selector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="3dp"
+                android:background="@drawable/authorization_edit_text_border"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__activity_level_header">
+
+                <Spinner
+                    android:id="@+id/fragment_personal_form__activity_level_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:entries="@array/activity_level"
+                    android:foregroundGravity="center"
+                    android:paddingEnd="50dp"
+                    android:spinnerMode="dropdown" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_more_arrow" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/fragment_personal_form__motherhood_header"
+                style="@style/topDesignation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/motherhood_header"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__activity_level_selector" />
+
+            <RelativeLayout
+                android:id="@+id/fragment_personal_form__motherhood_selector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="3dp"
+                android:background="@drawable/authorization_edit_text_border"
+                app:layout_constraintEnd_toStartOf="@id/fragment_personal_form_block__guidelineRight"
+                app:layout_constraintStart_toEndOf="@id/fragment_personal_form_block__guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/fragment_personal_form__motherhood_header">
+
+                <Spinner
+                    android:id="@+id/fragment_personal_form__motherhood_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:entries="@array/motherhood"
+                    android:foregroundGravity="center"
+                    android:paddingEnd="50dp"
+                    android:spinnerMode="dropdown" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_more_arrow" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

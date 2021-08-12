@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ingredient_row__layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="— Ингредиент"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textColor="@color/black_text"
         android:fontFamily="@font/rubik_regular"
         />
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="60 гр."
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textColor="@color/black_text"
         android:fontFamily="@font/rubik_regular"
         android:layout_alignParentEnd="true"

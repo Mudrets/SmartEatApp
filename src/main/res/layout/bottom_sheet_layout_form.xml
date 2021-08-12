@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:paddingVertical="15dp"
+        android:background="@drawable/bottom_sheet_background">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bottom_sheet_layout_form__create_plan_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/create_plan"
+            android:drawableLeft="@drawable/ic_create_plan_icon"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:textAllCaps="false"
+            android:textColor="@color/black_text"
+            android:stateListAnimator="@null"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="16sp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bottom_sheet_layout_form__edit_form_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/bottom_sheet_layout_form__create_plan_btn"
+            android:text="@string/edit_form"
+            android:drawableLeft="@drawable/ic_edit_plan"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:textAllCaps="false"
+            android:textColor="@color/black_text"
+            android:stateListAnimator="@null"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bottom_sheet_layout_form__copy_form_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/bottom_sheet_layout_form__edit_form_btn"
+            android:text="@string/copy_plan"
+            android:drawableLeft="@drawable/ic_copy_plan"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:textAllCaps="false"
+            android:textColor="@color/black_text"
+            android:stateListAnimator="@null"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bottom_sheet_layout_form__delete_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/bottom_sheet_layout_form__copy_form_btn"
+            android:text="@string/delete_plan"
+            android:drawableLeft="@drawable/ic_delete_plan"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:textAllCaps="false"
+            android:textColor="@color/error_red"
+            android:stateListAnimator="@null"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="16sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
