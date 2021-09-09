@@ -59,7 +59,7 @@ class FinalSettingsOfFormFragment(
         proteinField.text = form.dailyProtein.toString()
         fatsField.text = form.dailyFat.toString()
         carbonField.text = form.dailyCarbon.toString()
-        kcalField.text = form.dailyCal.toString()
+        kcalField.text = form.kcals.toString()
 
         lifeStyleField.text = lifeStyles[form.lifeStyle]
         goalField.text = goals[form.goal]

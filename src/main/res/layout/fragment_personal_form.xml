@@ -227,7 +227,8 @@
                     android:entries="@array/goals"
                     android:foregroundGravity="center"
                     android:paddingEnd="50dp"
-                    android:spinnerMode="dropdown" />
+                    android:spinnerMode="dropdown"
+                    android:singleLine="false"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -300,6 +301,7 @@
                     android:paddingEnd="50dp"
                     android:spinnerMode="dropdown"
                     android:gravity=""
+                    android:singleLine="false"
                     />
 
                 <ImageView
@@ -343,7 +345,8 @@
                     android:entries="@array/fitness_level"
                     android:foregroundGravity="center"
                     android:paddingEnd="50dp"
-                    android:spinnerMode="dropdown" />
+                    android:spinnerMode="dropdown"
+                    android:singleLine="false"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -385,7 +388,8 @@
                     android:entries="@array/activity_level"
                     android:foregroundGravity="center"
                     android:paddingEnd="50dp"
-                    android:spinnerMode="dropdown" />
+                    android:spinnerMode="dropdown"
+                    android:singleLine="false"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -427,7 +431,8 @@
                     android:entries="@array/motherhood"
                     android:foregroundGravity="center"
                     android:paddingEnd="50dp"
-                    android:spinnerMode="dropdown" />
+                    android:spinnerMode="dropdown"
+                    android:singleLine="false" />
 
                 <ImageView
                     android:layout_width="wrap_content"

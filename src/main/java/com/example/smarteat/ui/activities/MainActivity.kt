@@ -35,7 +35,8 @@ import java.time.LocalDate
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
-class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, AchievementChecker.AchievementListener {
+class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener,
+    AchievementChecker.AchievementListener {
     internal var bottomNavigation: BottomNavigationView? = null
     private lateinit var user: User
     internal lateinit var formsFragment: FormsFragment
@@ -48,7 +49,8 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
     internal lateinit var progressBar: ProgressBar
     private val slidesList: ArrayList<Slide> = ArrayList()
     private var questionsArray: ArrayList<String> = ArrayList()
-    private val productArraysNames = ArrayList<Int>(arrayListOf(
+    private val productArraysNames = ArrayList<Int>(
+        arrayListOf(
             R.array.cereals,
             R.array.flour_products,
             R.array.meat_and_poultry,
@@ -66,13 +68,14 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
             R.array.sauce,
             R.array.soy_products,
             R.array.impossible_to_refuse
-        ))
+        )
+    )
     private lateinit var achievementImages: Array<Drawable?>
     private val achievementConditions = arrayOf(
         { user.firstUserEnterDay == LocalDate.now() }, //Первый вход
         { user.activePlan != null }, //Первый план пользователя
         { user.boughtAllProducts }, //Покупка всех продуктов
-        { user.activePlan?.numOfWeek ?: 0 >= 2} //Первая неделя
+        { user.activePlan?.numOfWeek ?: 0 >= 2 } //Первая неделя
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,9 +93,21 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
 //        userDataFile.delete()
         achievementImages = arrayOf(
             ResourcesCompat.getDrawable(resources, R.mipmap.ic_door_foreground, null), //Первый вход
-            ResourcesCompat.getDrawable(resources, R.mipmap.ic_food_tray_foreground, null), //Первый план
-            ResourcesCompat.getDrawable(resources, R.mipmap.ic_basket_foreground, null), //Покупка всех продуктов
-            ResourcesCompat.getDrawable(resources, R.mipmap.ic_date_foreground, null) //Первая неделя
+            ResourcesCompat.getDrawable(
+                resources,
+                R.mipmap.ic_food_tray_foreground,
+                null
+            ), //Первый план
+            ResourcesCompat.getDrawable(
+                resources,
+                R.mipmap.ic_basket_foreground,
+                null
+            ), //Покупка всех продуктов
+            ResourcesCompat.getDrawable(
+                resources,
+                R.mipmap.ic_date_foreground,
+                null
+            ) //Первая неделя
         )
 
         for (i in 0..3) {
@@ -209,11 +224,10 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
     }
 
     private fun showWarningAboutEndOfWeek() {
-        val dialog = DialogTwoButtons(
+        val dialog = DialogOneButton(
             "Неделя подходит к концу",
-            "Неделя подходит к концу, может быть стоит составить себе план по новой анкете?",
+            "Вы можете выбрать или заполнить новую анкету для следующей недели",
             "К анкетам",
-            "Отмена",
             {
                 bottomNavigation?.menu?.getItem(3)?.isChecked = true
                 makeCurrentFragment(formsFragment)
@@ -223,11 +237,27 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
         showDialog(dialog)
     }
 
+    private fun showWarningAboutEndOfTrialWeek() {
+        val dialog = DialogOneButton(
+            "Окончание пробной недели",
+            "Пожалуйста оформите подписку, чтобы составить себе новый план питания",
+            "Оформить подписку",
+            {
+                bottomNavigation?.menu?.getItem(4)?.isChecked = true
+                makeCurrentFragment(profileFragment)
+            },
+            { AchievementChecker.checkAchievements() }
+        )
+        showDialog(dialog)
+    }
+
     private fun checkWarningAboutPlan() {
-        if  (user.isSubscribed && user.activePlan != null && user.activePlan!!.currDay >= 26)
+        if (user.isSubscribed && user.activePlan != null && user.activePlan!!.currDay >= 26)
             showWarningAboutEndOfPlan()
         else if (user.isSubscribed && user.activePlan != null && (user.activePlan!!.currDay - 1) % 7 >= 5)
             showWarningAboutEndOfWeek()
+        else if (!user.isSubscribed && !user.isFirstWeek)
+            showWarningAboutEndOfTrialWeek()
         else if (!user.isSubscribed && user.activePlan != null && user.activePlan!!.currDay > 5)
             showWarningAboutEndOfTrialPlan()
         else
@@ -268,9 +298,11 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
         startActivity(intent)
     }
 
-    internal fun showRecipe(recipes: ArrayList<Pair<Int, Int>>) {
+    internal fun showRecipe(recipes: ArrayList<Pair<Int, Int>>, recipeName: String) {
+        val newRecipes =
+            recipes.filter { it.second != 1 || recipeName.toLowerCase().contains("гарнир") }
         val newRecipesFragment = RecipesFragment(user)
-        newRecipesFragment.selectedRecipes = recipes
+        newRecipesFragment.selectedRecipes = ArrayList(newRecipes)
         bottomNavigation?.menu?.getItem(1)?.isChecked = true
         makeCurrentFragment(newRecipesFragment)
     }
@@ -288,7 +320,8 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
     internal fun showDialog(dialog: DialogFragment) {
         try {
             dialog.show(supportFragmentManager, "one button dialog")
-        } catch (ignored: IllegalStateException) { }
+        } catch (ignored: IllegalStateException) {
+        }
     }
 
     internal fun showLastSlide() {
@@ -303,7 +336,7 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
 
         slidesList.clear()
         editCpfcFragment = EditCpfcFragment(form, this)
-        val personalFragment = PersonalFormFragment(form, productArraysNames.size + 4)
+        val personalFragment = PersonalFormFragment(form, productArraysNames.size + 3)
         personalFragment.parentActivity = this
         slidesList.add(personalFragment)
 
@@ -313,7 +346,7 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
                 products,
                 form,
                 i + 2,
-                productArraysNames.size + 4,
+                productArraysNames.size + 3,
                 this
             )
             if (slidesList.size == 0)
@@ -323,26 +356,26 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
             slidesList.add(currFragment)
         }
 
-        val countOfSnacks = CountOfSnacks(
-            form,
-            this,
-            productArraysNames.count() + 4,
-            productArraysNames.count() + 2
-        )
-        countOfSnacks.setPrev(slidesList.last() as Fragment)
-        slidesList.add(countOfSnacks)
+//        val countOfSnacks = CountOfSnacks(
+//            form,
+//            this,
+//            productArraysNames.count() + 3,
+//            productArraysNames.count() + 2
+//        )
+//        countOfSnacks.setPrev(slidesList.last() as Fragment)
+//        slidesList.add(countOfSnacks)
 
         val cookingPreferences = CookingPreferencesFragment(
             form,
-            productArraysNames.count() + 4,
+            productArraysNames.count() + 3,
             this
         )
-        cookingPreferences.setPrev(countOfSnacks)
+        cookingPreferences.setPrev(slidesList.last() as Fragment)
         slidesList.add(cookingPreferences)
 
         val finalSettingsOfForm = FinalSettingsOfFormFragment(
             form,
-            productArraysNames.count() + 4,
+            productArraysNames.count() + 3,
             this,
             editCpfcFragment
         )
@@ -369,8 +402,12 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
                     val msgs = response.getJSONArray("mealErrors")
                     val newSequence = ArrayList<QuestionsFragment>()
                     for (i in 0 until msgs.length()) {
-                        var currMsg = msgs.getString(i).split(":")[1].trim().trim { char -> char == '"' }
-                        currMsg = currMsg.replace("Какие сладости вы любите?", "От чего вы не готовы отказаться?")
+                        var currMsg =
+                            msgs.getString(i).split(":")[1].trim().trim { char -> char == '"' }
+                        currMsg = currMsg.replace(
+                            "Какие сладости вы любите?",
+                            "От чего вы не готовы отказаться?"
+                        )
                         val fragmentIndex = questionsArray.indexOf(currMsg)
                         val frag = slidesList[fragmentIndex + 1]
                         if (frag is QuestionsFragment) {
@@ -383,7 +420,8 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
                                 msgs.length() - 1 -> {
                                     frag.nextFragment = slidesList.last() as Fragment
                                     newSequence[i - 1].nextFragment = frag
-                                    (slidesList.last() as FinalSettingsOfFormFragment).prevFragment = frag
+                                    (slidesList.last() as FinalSettingsOfFormFragment).prevFragment =
+                                        frag
                                 }
                                 else -> {
                                     frag.prevFragment = newSequence[i - 1]
@@ -477,11 +515,15 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
         when (action) {
             0 -> {
                 if (form.hasPlan && !form.isActive) {
-                    val plan = user.plans.find { plan -> plan.form == form }
-                    user.activePlan = plan
-                    AchievementChecker.checkAchievements()
+                    if (!user.isSubscribed && !user.isFirstWeek)
+                        showWarningAboutEndOfTrialWeek()
+                    else {
+                        val plan = user.plans.find { plan -> plan.form == form }
+                        user.activePlan = plan
+                        AchievementChecker.checkAchievements()
 //                    bottomNavigation?.menu?.getItem(2)?.isChecked = true
 //                    makeCurrentFragment(fragmentWithPlan)
+                    }
                 } else if (form.isActive) {
                     user.activePlan = null
                 }
@@ -490,8 +532,10 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
                 else if (user.activePlan == null)
                     formsFragment.setNewWarningMsg("Для составления плана вам нужно выбрать одну из законченных анкет и составить по ней план")
                 else
-                    formsFragment.setNewWarningMsg("Над кнопкой \\\"Новая анкета\\\" располагается анкета, по которой строится текущий план питания.\n" +
-                            "Чтобы создать новый план питания по другой анкете, нажмите на нее и нажмите на кнопку \"Составить план\"")
+                    formsFragment.setNewWarningMsg(
+                        "Над кнопкой \"Новая анкета\" располагается анкета, по которой строится текущий план питания.\n" +
+                                "Чтобы создать новый план питания по другой анкете, нажмите на нее и нажмите на кнопку \"Составить план\""
+                    )
                 formsFragment.formsRecyclerView.adapter?.notifyDataSetChanged()
                 CoroutineScope(Dispatchers.IO).launch {
                     DataUpdater.updateAllPlans(userDataFile, user)
@@ -539,8 +583,10 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
                                 else if (user.activePlan == null)
                                     formsFragment.setNewWarningMsg("Для составления плана вам нужно выбрать одну из законченных анкет и составить по ней план")
                                 else
-                                    formsFragment.setNewWarningMsg("Над кнопкой \\\"Новая анкета\\\" располагается анкета, по которой строится текущий план питания.\n" +
-                                            "Чтобы создать новый план питания по другой анкете, нажмите на нее и нажмите на кнопку \"Составить план\"")
+                                    formsFragment.setNewWarningMsg(
+                                        "Над кнопкой \"Новая анкета\" располагается анкета, по которой строится текущий план питания.\n" +
+                                                "Чтобы создать новый план питания по другой анкете, нажмите на нее и нажмите на кнопку \"Составить план\""
+                                    )
                             }
                             form.hasPlan -> {
                                 val plan = user.plans.find { plan -> plan.form == form }
@@ -551,8 +597,10 @@ class MainActivity : AppCompatActivity(), BottomFormDialog.FormDialogListener, A
                                 else if (user.activePlan == null)
                                     formsFragment.setNewWarningMsg("Для составления плана вам нужно выбрать одну из законченных анкет и составить по ней план")
                                 else
-                                    formsFragment.setNewWarningMsg("Над кнопкой \\\"Новая анкета\\\" располагается анкета, по которой строится текущий план питания.\n" +
-                                            "Чтобы создать новый план питания по другой анкете, нажмите на нее и нажмите на кнопку \"Составить план\"")
+                                    formsFragment.setNewWarningMsg(
+                                        "Над кнопкой \"Новая анкета\" располагается анкета, по которой строится текущий план питания.\n" +
+                                                "Чтобы создать новый план питания по другой анкете, нажмите на нее и нажмите на кнопку \"Составить план\""
+                                    )
                             }
                             else -> {
                                 user.formsWithoutPlan.remove(form)

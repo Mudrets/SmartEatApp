@@ -144,7 +144,7 @@ class PersonalFormFragment(
 
         val goalInd = if (form.goal != -1) form.goal else adapters[0].count
         val countOfWorkoutsInd =
-            if (form.workoutsPerWeek != -1) form.workoutsPerWeek else adapters[1].count
+            if (form.workoutsPerWeek != -1) 20 - form.workoutsPerWeek else adapters[1].count
         val activityLevelInd = if (form.lifeStyle != -1) form.lifeStyle else adapters[2].count
         val fitnessLevelInd = if (form.fitnessLevel != -1) form.fitnessLevel else adapters[3].count
         val motherhoodInd = if (form.motherhood != -1) form.motherhood else adapters[4].count
@@ -254,7 +254,7 @@ class PersonalFormFragment(
             form.weight = weightField.text.toString().toInt()
             form.age = ageField.text.toString().toInt()
             form.goal = goalSpinner.selectedItemPosition
-            form.workoutsPerWeek = countOfWorkoutsSpinner.selectedItemPosition
+            form.workoutsPerWeek = (20 - countOfWorkoutsSpinner.selectedItemPosition)
             form.lifeStyle = activityLevelSpinner.selectedItemPosition
             form.fitnessLevel = fitnessLevelSpinner.selectedItemPosition
             form.gender = when {

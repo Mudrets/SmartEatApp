@@ -118,6 +118,7 @@ class CookingPreferencesFragment(
                     form.dailyProtein = resultJson.getDouble("proteins").toInt()
                     form.dailyCarbon = resultJson.getDouble("carbons").toInt()
                     form.dailyFat = resultJson.getDouble("fats").toInt()
+                    form.kcals = resultJson.getDouble("kcals").toInt()
 
                     parentActivity?.progressBar?.visibility = ProgressBar.GONE
                     nextBtn.isEnabled = true

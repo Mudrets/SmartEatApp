@@ -38,6 +38,7 @@ class RecipesFragment(
             if (selectedRecipes.isNotEmpty()) {
                 var min = 100
                 for ((category, recipe) in selectedRecipes) {
+//                    if (selectedRecipes.size > 1)
                     recipesList[category][recipe].isExpanded = true
                     if (recipe < min)
                         min = recipe

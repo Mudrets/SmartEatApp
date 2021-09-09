@@ -193,14 +193,17 @@ class User(data: JSONObject) : Serializable, AchievementChecker.AchievementListe
         }
 
         if (data.getJSONArray("users").getJSONObject(0).has("subscribeDate")) {
-            subscribeDate = LocalDate.parse(
-                data.getJSONArray("users")
-                    .getJSONObject(0)
-                    .getString("subscribeDate")
-            )
-            subscribeEndDate = subscribeDate?.plusMonths(1)
-            if (subscribeEndDate != null && subscribeEndDate!! > LocalDate.now())
+            val dateStr = data.getJSONArray("users")
+                .getJSONObject(0)
+                .getString("subscribeDate")
+            val pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+            val date = LocalDate.parse(dateStr, pattern)
+            if (date.plusMonths(1) > LocalDate.now()) {
                 isSubscribed = true
+                subscribeDate = date
+                subscribeEndDate = subscribeDate?.plusMonths(1)
+            } else
+                isSubscribed = false
         }
 
         if (data.getJSONArray("users").getJSONObject(0).has("showFormWarnings"))

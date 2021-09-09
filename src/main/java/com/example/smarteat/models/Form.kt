@@ -94,6 +94,7 @@ class Form(
     internal var dailyCarbon: Int = -1
     internal var dailyCal: Int = -1
     internal var baseCal: Int = -1;
+    internal var kcals: Int = -1
     internal var snacks: ArrayList<Boolean> = ArrayList(Arrays.asList(false, false, false))
 
     internal fun copy(): Form {
@@ -110,7 +111,7 @@ class Form(
             _createdAt = createdAt,
             _updatedAt = LocalDateTime.now(),
             _ingredients = ingredients,
-            _name = name,
+            _name = "$name (копия)",
             _isActive = false,
             _hasPlan = hasPlan
         )

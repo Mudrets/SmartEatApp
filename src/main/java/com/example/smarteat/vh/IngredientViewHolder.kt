@@ -23,7 +23,7 @@ class IngredientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
                 recipePositions.add(Pair(eating.recipeNum / 100 - 1, index))
             }
             if (recipePositions.isNotEmpty())
-                parentFragment.parentActivity.showRecipe(recipePositions)
+                parentFragment.parentActivity.showRecipe(recipePositions, eating.recipeName)
             else {
                 val dialog = DialogOneButton(
                     "Нет рецепта",

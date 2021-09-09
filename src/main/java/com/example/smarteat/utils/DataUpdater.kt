@@ -100,6 +100,8 @@ object DataUpdater {
         if (user.subscribeDate != null) {
             userJson.getJSONArray("users").getJSONObject(0)
                 .put("subscribeDate", user.subscribeDate)
+        } else if(userJson.getJSONArray("users").getJSONObject(0).has("subscribeDate")) {
+            userJson.getJSONArray("users").getJSONObject(0).remove("subscribeDate")
         }
         ReadWriter.writeDataToFile(userDataFile, userJson.toString())
     }

@@ -15,6 +15,8 @@ import com.example.smarteat.R
 import com.example.smarteat.models.Eating
 import com.example.smarteat.ui.dialogs.DialogOneButton
 import com.example.smarteat.ui.fragments.FragmentWithPlan
+import java.util.*
+import kotlin.collections.ArrayList
 
 class EatingAdapter(
     private val eating: ArrayList<Eating>,
@@ -46,10 +48,10 @@ class EatingAdapter(
                 val recipePositions = ArrayList<Pair<Int, Int>>()
                 for (recipe in e.recipes) {
                     val index = recipes.indexOf(recipe)
-                    recipePositions.add(Pair(e.recipeNum / 100 - 1, index))
+                        recipePositions.add(Pair(e.recipeNum / 100 - 1, index))
                 }
                 if (recipePositions.isNotEmpty())
-                    parentFragment.parentActivity.showRecipe(recipePositions)
+                    parentFragment.parentActivity.showRecipe(recipePositions, e.recipeName)
                 else {
                     val dialog = DialogOneButton(
                         "Нет рецепта",

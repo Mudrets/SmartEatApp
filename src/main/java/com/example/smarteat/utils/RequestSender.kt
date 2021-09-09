@@ -22,7 +22,7 @@ import java.nio.charset.Charset
 //localhost: http://10.0.2.2:8084/
 
 object RequestSender {
-    const val SERVER = "https://dev.smart-eat.ru/"
+    const val SERVER = "http://10.0.2.2:8084/"
     const val RESET_PASSWORD_URL = "${SERVER}api/v0.1/resetPassword"
     const val SINGIN_URL = "${SERVER}api/v0.1/signIn"
     const val REGISTER_URL = "${SERVER}api/v0.1/register"

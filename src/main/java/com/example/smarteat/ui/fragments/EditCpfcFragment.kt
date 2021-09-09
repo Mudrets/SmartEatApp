@@ -67,11 +67,11 @@ class EditCpfcFragment(
                     carbonPer = carbonsPercentField.text.toString().toInt()
                 } else {
                     form.dailyProtein =
-                        (form.dailyCal * proteinsPercentField.text.toString().toInt() / 400.0).toInt()
+                        (form.kcals * proteinsPercentField.text.toString().toInt() / 400.0).toInt()
                     form.dailyFat =
-                        (form.dailyCal * fatsPercentField.text.toString().toInt() / 900.0).toInt()
+                        (form.kcals * fatsPercentField.text.toString().toInt() / 900.0).toInt()
                     form.dailyCarbon =
-                        (form.dailyCal * carbonsPercentField.text.toString().toInt() / 400.0).toInt()
+                        (form.kcals * carbonsPercentField.text.toString().toInt() / 400.0).toInt()
                     proteinPer = -1
                     fatPer = -1
                     carbonPer = -1
@@ -102,11 +102,11 @@ class EditCpfcFragment(
         caloriesField.setOnFocusChangeListener { v, hasFocus ->
             if (!hasFocus) {
                 val value: Double
-                val oldVal = form.dailyCal
+                val oldVal = form.kcals
                 try {
                     value = caloriesField.text.toString().toDouble()
                     if (value >= generalExchange.text.toString().toInt()) {
-                        form.dailyCal = value.toInt()
+                        form.kcals = value.toInt()
                         form.dailyProtein =
                             (value * lastValidProteinPer / 400).toInt()
                         form.dailyFat =
@@ -156,19 +156,19 @@ class EditCpfcFragment(
         resultSurplusHeader = view.findViewById(R.id.fragment_edit_cpfc__surplus_header)
         saveButton = view.findViewById(R.id.fragment_edit_cpfc__save_btn)
         warningMessage = view.findViewById(R.id.fragment_edit_cpfc__warning_msg)
-        startCountCalories = form.dailyCal
+        startCountCalories = form.kcals
     }
 
     private fun setValues() {
-        countCalories.text = startCountCalories.toString()
+        countCalories.text = form.dailyCal.toString()
         generalExchange.text = form.baseCal.toString()
         proteinsField.setText(String.format("%.2f", form.dailyProtein.toDouble() / form.weight))
         fatsField.setText(String.format("%.2f", form.dailyFat.toDouble() / form.weight))
         carbonsField.setText(String.format("%.2f", form.dailyCarbon.toDouble() / form.weight))
-        caloriesField.setText(form.dailyCal.toString())
+        caloriesField.setText(form.kcals.toString())
         if (fatPer == -1 && carbonPer == -1 && proteinPer == -1) {
-            lastValidProteinPer = ((form.dailyProtein * 400).toDouble() / form.dailyCal + 0.5).toInt()
-            lastValidFatPer = ((form.dailyFat * 900).toDouble() / form.dailyCal + 0.5).toInt()
+            lastValidProteinPer = ((form.dailyProtein * 400).toDouble() / form.kcals + 0.5).toInt()
+            lastValidFatPer = ((form.dailyFat * 900).toDouble() / form.kcals + 0.5).toInt()
             lastValidCarbonPer = 100 - (lastValidFatPer + lastValidProteinPer)
             proteinsPercentField.setText(lastValidProteinPer.toString())
             fatsPercentField.setText(lastValidFatPer.toString())
@@ -181,11 +181,11 @@ class EditCpfcFragment(
         resultProteins.text = form.dailyProtein.toString()
         resultFats.text = form.dailyFat.toString()
         resultCarbons.text = form.dailyCarbon.toString()
-        resultCalories.text = form.dailyCal.toString()
-        if (startCountCalories < form.dailyCal) {
+        resultCalories.text = form.kcals.toString()
+        if (startCountCalories < form.kcals) {
             resultSurplusHeader.visibility = View.VISIBLE
             resultSurplus.visibility = View.VISIBLE
-            resultSurplus.text = (form.dailyCal - startCountCalories).toString()
+            resultSurplus.text = (form.kcals - startCountCalories).toString()
         } else {
             resultSurplusHeader.visibility = View.GONE
             resultSurplus.visibility = View.GONE
@@ -200,7 +200,7 @@ class EditCpfcFragment(
                     value = proteinsField.text.toString().replace(',', '.').toDouble()
                     if (value > 0 && form.dailyProtein * 4 + form.dailyFat * 9 + form.dailyCarbon * 4 > generalExchange.text.toString().toInt()) {
                         form.dailyProtein = (value * form.weight).toInt()
-                        form.dailyCal =
+                        form.kcals =
                             form.dailyProtein * 4 + form.dailyFat * 9 + form.dailyCarbon * 4
                     }
                 } catch (ex: NumberFormatException) {
@@ -223,7 +223,7 @@ class EditCpfcFragment(
                     value = fatsField.text.toString().replace(',', '.').toDouble()
                     if (value > 0 && form.dailyProtein * 4 + form.dailyFat * 9 + form.dailyCarbon * 4 > generalExchange.text.toString().toInt()) {
                         form.dailyFat = (value * form.weight).toInt()
-                        form.dailyCal =
+                        form.kcals =
                             form.dailyProtein * 4 + form.dailyFat * 9 + form.dailyCarbon * 4
                     }
                 } catch (ex: NumberFormatException) {
@@ -241,7 +241,7 @@ class EditCpfcFragment(
                     value = carbonsField.text.toString().replace(',', '.').toDouble()
                     if (value > 0 && form.dailyProtein * 4 + form.dailyFat * 9 + form.dailyCarbon * 4 > generalExchange.text.toString().toInt()) {
                         form.dailyCarbon = (value * form.weight).toInt()
-                        form.dailyCal =
+                        form.kcals =
                             form.dailyProtein * 4 + form.dailyFat * 9 + form.dailyCarbon * 4
                     }
                 } catch (ex: NumberFormatException) {

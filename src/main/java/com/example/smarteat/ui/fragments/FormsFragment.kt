@@ -36,12 +36,11 @@ class FormsFragment(private val user: User) : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_forms, container, false)
         val msg: String = if (user.plans.isEmpty())
-            "Для заполнения анкеты нажмите на кнопку \"Новая анкета\" и укажите все необходимые данные, после чего нажмите на кнопку \"Сохранить анкету\""
+            """Для заполнения анкеты нажмите на кнопку "Новая анкета" и укажите все необходимые данные, после чего нажмите на кнопку "Сохранить анкету""""
         else if (user.activePlan == null)
             "Для составления плана вам нужно выбрать одну из законченных анкет и составить по ней план"
         else
-            "Над кнопкой \"Новая анкета\" располагается анкета, по которой строится текущий план питания.\n" +
-                    "Чтобы создать новый план питания по другой анкете, нажмите на нее и нажмите на кнопку \"Составить план\""
+            """Над кнопкой "Новая анкета" располагается анкета, по которой строится текущий план питания. Чтобы создать новый план питания по другой анкете, нажмите на нее и нажмите на кнопку "Составить план""""
 
         formsRecyclerView = view.findViewById(R.id.fragment_forms__forms_recycler)
         formsRecyclerView.layoutManager = object : LinearLayoutManager(view.context) {
